@@ -6,10 +6,7 @@ import com.example.factory.Factory;
 import com.example.factory.Product;
 import com.example.pc.PcFactory;
 
-/**
- * Hello world!
- */
-public final class App {
+public final class App {    
     private App() {
     }
 
