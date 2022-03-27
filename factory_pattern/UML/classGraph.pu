@@ -1,0 +1,38 @@
+@startuml クラス図
+  package pkg <<Frame>> {
+
+    package factory <<Folder>> #Yellow|LightYellow {
+      Factory -r-> Product
+
+      abstract Factory {
+        + create(serialNumber : String) : Product
+        # createProduct(serialNumber :String) : Product
+        # registerProduct(product : Product) : void
+      }
+
+      abstract Product {
+        + use() : void
+      }
+    }
+
+    package pc <<Folder>> #Red\DarkRed{
+      PcFactory -r-> Pc
+      PcFactory -u-|> Factory
+      Pc -u-|> Product
+      
+      class PcFactory {
+        - serialNumberList : List<String>
+        # createProduct(serialNumber : String) : Product
+        # registerProduct(product : Product) : void
+        + getSerialNumberList() : List<String>
+      }
+
+      class Pc {
+        - serialNumber : String
+        + use() : void
+        + getSerialNumber() String
+      }
+    }
+  }
+
+@enduml
