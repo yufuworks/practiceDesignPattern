@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.List;
+
 import com.example.factory.Factory;
 import com.example.factory.Product;
 import com.example.pc.PcFactory;
@@ -27,10 +29,19 @@ public final class App {
 
         // 改行
         System.out.println();
-
+        
         // Productを使う
         pc1.use();
         pc2.use();
         pc3.use();
+        
+        // 改行
+        System.out.println();
+
+        List<String> serialNumberList = ((PcFactory) factory).getSerialNumberList();
+        for (int i = 0; i < serialNumberList.size(); i++) {
+            System.out.println("serialNumber" + i + "は" + serialNumberList.get(i) + "です");
+        }
+        
     }
 }

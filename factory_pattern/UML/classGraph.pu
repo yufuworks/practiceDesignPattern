@@ -5,9 +5,9 @@
       Factory -r-> Product
 
       abstract Factory {
-        + create(serialNumber : String) : Product
-        # createProduct(serialNumber :String) : Product
-        # registerProduct(product : Product) : void
+        + create() : Product
+        # createProduct() : Product
+        # registerProduct() : void
       }
 
       abstract Product {
