@@ -1,0 +1,15 @@
+@startuml
+title クラス図
+
+class Employee {
+  {field} - name : String 
+  {field} - age : int
+  {method}{static} # getName() : String
+  {method}{abstract} ~ getName(name : String) : void
+  {method} + getAge() : int
+  {method} + getAge(age : int) : void
+} 
+
+
+
+@enduml

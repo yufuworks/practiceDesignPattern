@@ -1,0 +1,24 @@
+@startuml
+title クラス図02
+
+Parent <|- Children
+
+class Parent {
+  + method() : void
+}
+
+class Children {
+  + method() :void
+}
+
+Interface <|.. Subclass
+
+Interface Interface <<interface>> {
+  + method() : void
+}
+
+Class Subclass {
+  + method() :void
+}
+
+@enduml

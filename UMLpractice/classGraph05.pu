@@ -1,0 +1,18 @@
+@startuml classGraphEx01
+title クラス図：例５（関連）
+
+Human -> PersonalComputer
+
+Class Human {
+  - pc : PersonalComputer
+  + use() : void
+}
+
+Class PersonalComputer {
+  + powerOn() : void
+  + powerOff() : void
+  +display() : void
+}
+
+
+@enduml

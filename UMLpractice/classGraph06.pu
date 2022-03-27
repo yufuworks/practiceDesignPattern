@@ -1,0 +1,6 @@
+@startuml classGraph06
+title クラス図：例６（集約）
+
+Smartphone o-- Cpu
+Smartphone o-- Memory
+Smartphone o-- Disk
