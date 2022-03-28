@@ -1,0 +1,49 @@
+@startuml クラス図（Windows）
+package pkg <<Frame>> {
+  package factory <<Folder>> #White/LightYellow {
+    OsFactory -l-> OsDisplaySystem
+    OsFactory -r-> OsFileSystem
+
+    class OsFactory {
+      + {static} getFactory() : OsFactory
+      + createFileSystem() : OsFileSystem
+      + createDisplaySystem() : OsDisplaySystem
+    }
+
+    class OsDisplaySystem {
+      + displayOsName() : void
+      + displayStr(str : String) : void
+    }
+
+    class OsFileSystem {
+      + getFileSeparator() : String
+      + getRootPath() : String
+      + saveFile(fileName : String) : void
+    }
+    package windows <<Folder>> #White/LightYellow {
+      WindowsFactory -l-> WindowsDisplaySystem
+      WindowsFactory -r-> WindowsFileSystem
+      WindowsFactory -u-|> OsFactory
+      WindowsDisplaySystem -u-|> OsDisplaySystem
+      WindowsFileSystem -u-|> OsFileSystem
+
+      class WindowsFactory {
+        + createFileSystem() : OsFileSystem
+        + createDisplaySystem() : OsDisplaySystem
+      }
+
+      class WindowsDisplaySystem {
+        + displayOsName() : void
+        + displayStr(str : String)  :void
+      }
+
+      class WindowsFileSystem {
+        + getFileSeparator() : String
+        + getRootPath() : String
+        + saveFile() : String
+      }
+    }
+  }
+}
+
+@enduml

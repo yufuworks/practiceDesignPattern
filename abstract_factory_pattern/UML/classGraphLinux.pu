@@ -1,0 +1,49 @@
+@startuml クラス図（Linux）
+package pkg <<Frame>> {
+  package factory <<Folder>> #White/LightYellow {
+    OsFactory -l-> OsDisplaySystem
+    OsFactory -r-> OsFileSystem
+
+    class OsFactory {
+      + {static} getFactory() : OsFactory
+      + createFileSystem() : OsFileSystem
+      + createDisplaySystem() : OsDisplaySystem
+    }
+
+    class OsDisplaySystem {
+      + displayOsName() : void
+      + displayStr(str : String) : void
+    }
+
+    class OsFileSystem {
+      + getFileSeparator() : String
+      + getRootPath() : String
+      + saveFile(fileName : String) : void
+    }
+    package linux <<Folder>> #White/LightYellow {
+      LinuxFactory -l-> LinuxDisplaySystem
+      LinuxFactory -r-> LinuxFileSystem
+      LinuxFactory -u-|> OsFactory
+      LinuxDisplaySystem -u-|> OsDisplaySystem
+      LinuxFileSystem -u-|> OsFileSystem
+
+      class LinuxFactory {
+        + createFileSystem() : OsFileSystem
+        + createDisplaySystem() : OsDisplaySystem
+      }
+
+      class LinuxDisplaySystem {
+        + displayOsName() : void
+        + displayStr(str : String)  :void
+      }
+
+      class LinuxFileSystem {
+        + getFileSeparator() : String
+        + getRootPath() : String
+        + saveFile() : String
+      }
+    }
+  }
+}
+
+@enduml
