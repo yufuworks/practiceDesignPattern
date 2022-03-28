@@ -1,0 +1,40 @@
+@startuml クラス図
+package pkg <<Frame>> {
+
+  Main -r-> Director
+  Director --> Builder
+  Main -d-> CsvBuilder
+  Main -d-> TextBuilder
+  CsvBuilder -u-|> Builder
+  TextBuilder -u-|> Builder
+
+  class Main {
+    + main() : void
+  }
+
+  abstract Builder {
+    + makeHeader() : void
+    + makeEmployeeList(employeeList : List) : void
+  }
+
+  class Director {
+    - builder : Builder
+    + construct(employeeList : List) : void
+  }
+
+  class CsvBuilder {
+    - sb : StringBuffer
+    + makeHeader() : void
+    + makeEmployeeList(employeeList : List) : void
+    + getResult() : String
+  }
+
+  class TextBuilder {
+    - sb : StringBuffer
+    + makeHeader() : void
+    + makeEmployeeList(employeeList : List) : void
+    + getResult() : String
+  }
+
+}
+@enduml
