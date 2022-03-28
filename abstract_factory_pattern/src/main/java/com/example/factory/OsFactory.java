@@ -2,16 +2,26 @@ package com.example.factory;
 
 public abstract class OsFactory {
 
-  /**
-   * コンストラクタ
-   */
-  public OsFactory() {
 
-  }
+  public static OsFactory getFactory(String className) {
 
-  public static final OsFactory getFactory() {
-    OsFactory osFactory = new WindowsFactory();
-    return osFactory;
+    OsFactory factory = null;
+
+    try {
+
+      factory = (OsFactory)Class.forName(className).newInstance();
+
+    } catch(ClassNotFoundException e) {
+      
+      System.out.println(className + "が見つかりません");
+
+    } catch(Exception e) {
+
+      e.printStackTrace();
+
+    }
+
+    return factory;
   }
   
   public abstract OsFileSystem createFileSystem();

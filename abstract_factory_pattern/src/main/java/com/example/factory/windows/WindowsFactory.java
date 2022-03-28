@@ -8,14 +8,12 @@ public class WindowsFactory extends OsFactory {
 
 	@Override
 	public OsFileSystem createFileSystem() {
-		// TODO Auto-generated method stub
-		return null;
+		return new WindowsFileSystem();
 	}
 
 	@Override
 	public OsDisplaySystem createDisplaySystem() {
-		// TODO Auto-generated method stub
-		return null;
+		return new WindowsDisplaySystem();
 	}
   
 }

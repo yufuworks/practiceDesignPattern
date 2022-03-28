@@ -6,20 +6,18 @@ public class WindowsFileSystem extends OsFileSystem {
 
 	@Override
 	public String getFileSeparetor() {
-		// TODO Auto-generated method stub
-		return null;
+		return "¥¥";
 	}
 
 	@Override
 	public String getRootPath() {
-		// TODO Auto-generated method stub
-		return null;
+		return "C:¥¥";
 	}
 
 	@Override
 	public void saveFile(String fileName) {
-		// TODO Auto-generated method stub
-		
+		String directory = getRootPath() + "work" + getFileSeparetor() + fileName;
+    System.out.println("saved: " + directory);
 	}
   
 }

@@ -6,14 +6,18 @@ public class WindowsDisplaySystem extends OsDisplaySystem {
 
 	@Override
 	public void displayOsName() {
-		// TODO Auto-generated method stub
-		
+    System.out.println("================================");
+    System.out.println("★ Windows ★");
+    System.out.println("================================");
+    System.out.println();
 	}
-
+  
 	@Override
 	public void displayStr(String str) {
-		// TODO Auto-generated method stub
-		
+    System.out.println("================================");
+    System.out.println("★" + str + "★");
+    System.out.println("================================");
+    System.out.println();
 	}
   
 }

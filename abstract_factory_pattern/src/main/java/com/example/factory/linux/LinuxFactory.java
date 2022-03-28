@@ -8,14 +8,12 @@ public class LinuxFactory extends OsFactory {
 
 	@Override
 	public OsFileSystem createFileSystem() {
-		// TODO Auto-generated method stub
-		return null;
+		return new LinuxFileSystem();
 	}
 
 	@Override
 	public OsDisplaySystem createDisplaySystem() {
-		// TODO Auto-generated method stub
-		return null;
+		return new LinuxDisplaySystem();
 	}
   
 }

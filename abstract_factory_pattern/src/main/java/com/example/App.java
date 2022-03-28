@@ -1,17 +1,29 @@
 package com.example;
 
-/**
- * Hello world!
- */
+import com.example.factory.OsDisplaySystem;
+import com.example.factory.OsFactory;
+import com.example.factory.OsFileSystem;
+
 public final class App {
     private App() {
     }
 
-    /**
-     * Says hello to the world.
-     * @param args The arguments of the program.
-     */
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+
+        // クラス名
+        // String className = "com.example.factory.windows.WindowsFactory";
+        String className = "com.example.factory.linux.LinuxFactory";
+
+        // Factory生成
+        OsFactory factory = OsFactory.getFactory(className);
+
+        // DisplaySystem生成
+        OsDisplaySystem displaySystem = factory.createDisplaySystem();
+        displaySystem.displayOsName();
+        displaySystem.displayStr("サンプル");
+
+        // FileSystem生成
+        OsFileSystem fileSystem = factory.createFileSystem();
+        fileSystem.saveFile("sample.txt");        
     }
 }
