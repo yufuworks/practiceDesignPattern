@@ -4,18 +4,18 @@ package pkg <<Frame>> {
     OsFactory -l-> OsDisplaySystem
     OsFactory -r-> OsFileSystem
 
-    class OsFactory {
+    abstract OsFactory {
       + {static} getFactory() : OsFactory
       + createFileSystem() : OsFileSystem
       + createDisplaySystem() : OsDisplaySystem
     }
 
-    class OsDisplaySystem {
+    abstract OsDisplaySystem {
       + displayOsName() : void
       + displayStr(str : String) : void
     }
 
-    class OsFileSystem {
+    abstract OsFileSystem {
       + getFileSeparator() : String
       + getRootPath() : String
       + saveFile(fileName : String) : void
