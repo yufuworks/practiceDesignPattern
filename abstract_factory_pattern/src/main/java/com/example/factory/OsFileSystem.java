@@ -2,10 +2,6 @@ package com.example.factory;
 
 public abstract class OsFileSystem {
   
-  public OsFileSystem() {
-
-  }
-
   /**
    * ファイルセパレーターを取得
    */
