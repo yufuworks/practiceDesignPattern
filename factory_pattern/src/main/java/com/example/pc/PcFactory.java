@@ -8,7 +8,7 @@ import com.example.factory.Product;
 
 public class PcFactory extends Factory {
 
-  private List<String> serialNumberList = new ArrayList();
+  private List<String> serialNumberList = new ArrayList<>();
   
   @Override
   protected Product createProduct(String serialNumber) {
