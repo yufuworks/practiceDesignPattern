@@ -1,0 +1,40 @@
+@startuml
+package pkg <<Frame>> {
+  package prototype <<Folder>> #White/LightYellow {
+    
+    Manager -r-> Item
+
+    class Manager {
+      - itemMap : Map
+      + register(name : String, item : Item) : void
+      + create(itemName : String) : void
+    }
+
+    interface Item <<interface>> {
+      + get() : void
+      + use() : void
+      + createClone() : Item
+    }
+
+    package sub <<Folder>> #White/LightYellow {
+
+      Potion -u-|> Item
+      Sword -u-|> Item
+
+      class Potion {
+        - name : String
+        + get() : void
+        + use() : void
+        + createClone() : Item
+      }
+
+      class Sword {
+        - name : String
+        + get() : void
+        + use() : void
+        + createClone() : Item
+      }
+    }
+  }
+}
+@enduml
