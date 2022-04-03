@@ -18,8 +18,8 @@ package pkg <<Frame>> {
 
     package sub <<Folder>> #White/LightYellow {
 
-      Potion -u-|> Item
-      Sword -u-|> Item
+      Potion .u.|> Item
+      Sword .u.|> Item
 
       class Potion {
         - name : String
