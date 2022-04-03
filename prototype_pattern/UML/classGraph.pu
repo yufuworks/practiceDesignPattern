@@ -1,4 +1,4 @@
-@startuml
+@startuml クラス図
 package pkg <<Frame>> {
   package prototype <<Folder>> #White/LightYellow {
     
